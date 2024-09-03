@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        background-color:lightblue;
+    }
+    .box{
+        text-align:center;   
+    }
+    label{
+        
+        font-size: 30px;
+        width: 200px; 
+    }
+    button{
+        
+        font-size: 16px; 
+        width: 100px;
+        margin-left:70px; 
+    }
+    .home a{
+        margin-left:175px;
+    }
+    .error {
+        color: red;
+        font-size: 14px;
+    }
+</style>
+</body>
+    <div class="box">
+        <h1>Registration Form</h1>
+    </div>
+    <form onsubmit="return validateForm()">
+        <label for="First Name">First name: </label>
+        <input type="text" id="name" name="name" required>
+        <span id="nameError" class="error"></span>
+        <br><br>
+        <label for="Last Name">Last Name:</label>
+        <input type="text" id="lname" name="lname" required>
+        <span id="lnameError" class="error"></span>
+        <br><br>
+        <label for="email">Email(1 email only)Ex:abc@gmail.com: </label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError" class="error"></span>
+        <br><br>
+        <label for="password">Password(minimum 6 characters): </label>
+        <input type="password" id="password" name="password" minlength="6" required>
+        <span id="passwordError" class="error"></span>
+        <br><br>
+        <label for="address">Address: </label>
+        <textarea id="address" name="address" rows="2" columns="5" required></textarea>
+        <span id="addressError" class="error"></span>
+        <br><br>
+        <label for="mobile no">Mobile No: </label>
+        <input type="tel" id="mobile" name="mobile" required>
+        <span id="mobileError" class="error"></span>
+        <br><br>
+        <label for="gender">Gender: </label>   
+        <input type="radio" id="Male" name="gender" value="Male" required> 
+        <label for="Male" > Male</label>
+        <input type="radio" id="Female" name="gender" value="Female" required>
+        <label for="Female">Female</label>
+        <span id="genderError" class="error"></span>
+        <br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <br><br>
+        <div class="home">
+            <a href="home.html">HOME</a>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var address = document.getElementById('address').value;
+            var mobile = document.getElementById('mobile').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+
+            document.getElementById('nameError').innerHTML = "";
+            document.getElementById('lnameError').innerHTML = "";
+            document.getElementById('emailError').innerHTML = "";
+            document.getElementById('passwordError').innerHTML = "";
+            document.getElementById('addressError').innerHTML = "";
+            document.getElementById('mobileError').innerHTML = "";
+            document.getElementById('genderError').innerHTML = "";
+
+            var isValid = true;
+
+            if (name.trim() === "") {
+                document.getElementById('nameError').innerHTML = "Please enter your first name";
+                isValid = false;
+            }
+
+            if (lname.trim() === "") {
+                document.getElementById('lnameError').innerHTML = "Please enter your last name";
+                isValid = false;
+            }
+
+            if (email.trim() === "") {
+                document.getElementById('emailError').innerHTML = "Please enter your email";
+                isValid = false;
+            }
+
+            if (password.trim() === "") {
+                document.getElementById('passwordError').innerHTML = "Please enter your password";
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').innerHTML = "Password must be at least 6 characters long";
+                isValid = false;
+            }
+
+            if (address.trim() === "") {
+                document.getElementById('addressError').innerHTML = "Please enter your address";
+                isValid = false;
+            }
+
+            if (mobile.trim() === "") {
+                document.getElementById('mobileError').innerHTML = "Please enter your mobile number";
+                isValid = false;
+            }
+            else if (!/^\d{10}$/.test(mobile)) {
+                document.getElementById('mobileError').innerHTML = "Invalid mobile number";
+                isValid = false;
+            }
+
+            if (!gender) {
+                document.getElementById('genderError').innerHTML = "Please select your gender";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</html>
+

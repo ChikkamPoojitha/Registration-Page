@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color:greenyellow;
+    }
+.topbox {
+    position: relative; /* Set position to relative */
+    top: 10px; /* Position the box 1 cm down from the top of the page */
+    margin: auto;
+    height:50px;
+    width: 700px;           
+    background-color: red;
+}
+.topbox h1 {
+    font-size: 40px;
+    font-family: Arial;
+    color:navy;
+    text-align: center;
+    margin: 0; 
+
+}
+.topbox h2{
+    text-align:center;
+    font-size:30px;
+}
+
+.topitems{
+    font-size:30px;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+  
+    
+}
+.topitems a{
+    margin:40px;
+}
+
+.downbox{
+
+    position:absolute;
+    top:300px;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:orange;
+}
+.downbox h2{
+    margin:0;
+    text-align:center;
+    padding-left:350px;
+}
+.img{
+       
+       padding-left:700px;
+   }
+.leftbox{
+    text-align:center;
+    font-size:30px;
+    position:absolute;
+    top:300px;
+    width:300px;
+    left:0;
+    bottom:0;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; 
+    background-color:peachpuff;
+} 
+
+</style>
+
+    <div class="topbox">
+        <h1><marquee direction>ONLINE BOOK STORE</marquee></h1> 
+        <h2>Created & Maintained By BVRIT-H</h2>  
+        <div class="topitems">
+            <a href="home.html">HOME</a>
+            <a href="login.html">LOGIN</a> 
+            <a href="register.html">REGISTER</a> 
+            <a href="catalogue.html">CATALOGUE</a> 
+        </div>
+    </div>
+
+    <div class="downbox">
+        <h2 >Welcome to the Online Book Store!!!</h2>
+        <br>
+        <h2 >"A Huge Collection Of Engineering E-Books"</h2>
+        <br>
+            <br>
+            <div class="img">
+            <img src="https://image.telanganatoday.com/wp-content/uploads/2023/01/GP-Birla_V_jpg--442x260-4g.webp?sw=412&dsz=442x260&iw=372&p=false&r=2.625">
+        </div>
+    </div>
+    
+    <div class="leftbox">
+        <a href="aiml.html">AIML</a>
+        <br>
+        <br>
+        <a href="cse.html">CSE</a> 
+        <br>
+        <br>
+        <a href="ece.html">ECE</a> 
+        <br>
+        <br>
+        <a href="eee.html">EEE</a> 
+
+    </div> 
+
+    
+</body>
+</html>
+

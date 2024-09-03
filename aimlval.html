@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: lavender;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            font-size: 16px; 
+            margin-left: 70px;
+        }
+        .home a {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Artificial Intelligence and Machine Learning</h1>
+    <form onsubmit="return validateForm()">
+        <label for="TextBooks">Text Books:</label>
+        <select id="textBooks" name="textBooks">
+            <option value="">Select a book</option>
+            <option value="js">Web Development Basics</option>
+            <option value="react">React & Node.js</option>
+            <option value="ml">Machine Learning</option>
+        </select>
+        <br><br>
+        <label for="Quantity">Quantity:</label>
+        <input type="text" id="quantity" name="quantity">
+        <br><br>
+        <button >Ok</button>
+    </form>
+    <br><br>
+    <div class="home">
+        <a href="home.html">HOME</a>
+    </div>
+
+    <script>
+        function validateForm() {
+            var textBooks = document.getElementById("textBooks").value;
+            var quantity = document.getElementById("quantity").value;
+
+            if (textBooks === "") {
+                alert("Please select a book");
+                return false;
+            }
+            if (quantity === "" || isNaN(quantity)) {
+                alert("Quantity must be filled out with a number");
+                return false;
+            }
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html>

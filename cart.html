@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Grocery</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>XYZ Grocery</h1>
+    <h2>CATALOGUE</h2>
+    <br>
+    <form id="catalogue">
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <th>Cost</th>
+                <th>Add to Cart</th>
+            </tr>
+            <tr>
+                <td>Sugar</td>
+                <td>100Rs/kg</td>
+                <td><input type='checkbox' id='sugar'></td>
+            </tr>
+            <tr>
+                <td>Salt</td>
+                <td>50Rs/kg</td>
+                <td><input type='checkbox' id='salt'></td>
+            </tr>
+            <tr>
+                <td>Shampoos</td>
+                <td>235Rs/lt</td>
+                <td><input type='checkbox' id='shampoos'></td>
+            </tr>
+            <tr>
+                <td>Soaps</td>
+                <td>100Rs/2 pieces</td>
+                <td><input type='checkbox' id='soaps'></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type='submit' value="BUY">
+                    <input type="reset" value="Clear">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        document.getElementById('catalogue').addEventListener('submit', function(event) {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+
+            if (!anyChecked) {
+                alert('No items selected');
+                event.preventDefault();
+                return;
+            } else {
+                alert('Items Purchased');
+                event.preventDefault();
+                return;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+<bookstore>
+  <book>
+    <title lang="en">Learning XML</title>
+    <author>John Doe</author>
+    <year>2021</year>
+    <price>39.95</price>
+  </book>
+  <book>
+    <title lang="en">Advanced XML</title>
+    <author>Jane Smith</author>
+    <year>2020</year>
+    <price>49.95</price>
+  </book>
+</bookstore>

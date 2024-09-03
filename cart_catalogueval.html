@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        caption {
+            text-align: center;
+            font-size: 35px;
+            margin: auto;
+        }
+        table {
+            font-size: 25px;
+            text-align: center;
+            margin: auto;
+            background-color: bisque;
+            
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center;
+        }
+        button {
+            margin-left: 680px;
+            font-size: 20px;
+            
+        } 
+        .home {
+            padding-left: 700px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <caption>
+        CATALOGUE
+        <br>
+        <br>
+    </caption>
+    <tr>
+        <th>Book No</th>
+        <th>Book Details</th>
+        <th>Price</th>
+        <th>Select</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Data Structures through C, Yashwant Kanetkar, BPB Publications</td>
+        <td>$40</td>
+        <td><input type="checkbox" name="book" value="40"></td>
+        
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Higher Engineering Mathematics, Ramana B.V</td>
+        <td>$60</td>
+        <td><input type="checkbox" name="book" value="60"></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Computer Organisation and Architecture, Morris Mano</td>
+        <td>$50</td>
+        <td><input type="checkbox" name="book" value="50"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Machine Learning, KL John</td>
+        <td>$43</td>
+        <td><input type="checkbox" name="book" value="43"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Java Programming, M. Robert</td>
+        <td>$35</td>
+        <td><input type="checkbox" name="book" value="35"></td>
+    </tr>
+</table>
+
+<button id="buyButton">Click to buy</button>
+
+<div class="home">
+    <a href="home.html">HOME</a>
+</div>
+
+<script>
+    document.getElementById('buyButton').addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        
+        if (checkboxes.length === 0) {
+            alert('Please select at least one book to purchase.');
+        } else {
+            alert('Items Selected. Proceed to purchase.');
+        }
+    });
+</script>
+
+</body>
+</html>
